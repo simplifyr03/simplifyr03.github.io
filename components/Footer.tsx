@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { contact, nav, services, socials } from "@/lib/content";
+import { nav, services, socials } from "@/lib/content";
 import { socialIcon } from "./Icons";
 
 export default function Footer() {
@@ -30,7 +30,7 @@ export default function Footer() {
 
         <FooterCol title="Company" links={nav.map((n) => ({ label: n.label, href: n.href }))} />
         <FooterCol title="Services" links={services.map((s) => ({ label: s.title, href: `/${s.slug}/` }))} />
-        <FooterCol title="Contact" links={[{ label: contact.email, href: `mailto:${contact.email}` }]} />
+        <FooterCol title="Contact" links={[{ label: "Contact Us", href: "/#contact" }]} />
       </div>
       <div className="border-t border-hairline">
         <div className="mx-auto flex max-w-[1280px] items-center justify-between px-5 py-6 text-xs text-ink-tertiary md:px-8">

@@ -20,16 +20,6 @@ export const hero = {
   cta: "Get Started",
 };
 
-export const trustedBy = {
-  label: "Trusted by",
-  logos: [
-    { src: "/images/logo1dark.svg", w: 150 },
-    { src: "/images/logoroyaloak.svg", w: 200 },
-    { src: "/images/logo2.svg", w: 110 },
-    { src: "/images/logo3.svg", w: 120 },
-  ],
-};
-
 export const pride = {
   lead: "At Simplifyr we pride ourselves on delivering exceptional solutions that drive real results for our clients.",
   body: "Our team of talented people work hand-in-hand with clients to create impactful results that resonate with their needs. We strive to exceed expectations and deliver a fabulous result.",
@@ -94,7 +84,6 @@ export const about = {
 
 export const contact = {
   title: "Contact",
-  email: "info@simplifyr.in",
 };
 
 export const emailjs = {

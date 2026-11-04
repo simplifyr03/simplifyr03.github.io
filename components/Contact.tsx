@@ -3,7 +3,7 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { AnimatePresence, motion } from "framer-motion";
-import { Loader2, Mail, Send, CheckCircle2 } from "lucide-react";
+import { Loader2, Send, CheckCircle2 } from "lucide-react";
 import { contact, emailjs as ej } from "@/lib/content";
 import Reveal, { WordReveal } from "./Reveal";
 
@@ -83,18 +83,7 @@ export default function Contact() {
                 <textarea className="input h-36 resize-none py-3" value={form.message} onChange={set("message")} />
               </Field>
 
-              <div className="flex flex-col gap-4 pt-2 sm:flex-row sm:items-center sm:justify-between">
-                <a
-                  href={`mailto:${contact.email}`}
-                  className="group inline-flex items-center gap-2 text-sm text-ink-subtle transition-colors hover:text-ink"
-                >
-                  <span className="grid h-8 w-8 place-items-center rounded-md border border-hairline bg-canvas text-primary-hover">
-                    <Mail className="h-4 w-4" />
-                  </span>
-                  <span>
-                    <span className="text-ink-tertiary">E-MAIL :</span> {contact.email}
-                  </span>
-                </a>
+              <div className="flex justify-end pt-2">
                 <button type="submit" disabled={loading} className="btn-primary min-w-[120px] disabled:opacity-70">
                   {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4" />}
                   Send
