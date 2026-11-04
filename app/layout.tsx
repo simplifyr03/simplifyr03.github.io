@@ -9,10 +9,32 @@ import CursorGlow from "@/components/CursorGlow";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
 
+const description =
+  "Welcome to Simplifyr, where complexity meets simplicity. Software, Accounting, Web Development and HR Solutions — One Stop Solution.";
+
 export const metadata: Metadata = {
+  metadataBase: new URL("https://simplifyr.in"),
   title: "Simplifyr",
-  description: "One Stop Solution",
-  icons: { icon: "/favicon.ico" },
+  description,
+  icons: {
+    icon: [{ url: "/favicon.ico" }, { url: "/icon-512.png", type: "image/png", sizes: "512x512" }],
+    apple: "/apple-touch-icon.png",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://simplifyr.in/",
+    siteName: "Simplifyr",
+    title: "Simplifyr — where complexity meets simplicity",
+    description,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Simplifyr — where complexity meets simplicity" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@simplifyr_in",
+    title: "Simplifyr — where complexity meets simplicity",
+    description,
+    images: ["/og-image.png"],
+  },
 };
 
 export const viewport: Viewport = {
