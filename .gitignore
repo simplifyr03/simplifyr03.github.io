@@ -1,0 +1,8 @@
+node_modules
+.next
+out
+_source
+next-env.d.ts
+*.tsbuildinfo
+.DS_Store
+simplifyr-site.zip

@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: #010102;
+}
+
+body {
+  @apply bg-canvas text-ink font-sans antialiased;
+  letter-spacing: -0.05px;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(94, 106, 210, 0.45);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid rgba(94, 105, 209, 0.5);
+  outline-offset: 2px;
+}
+
+@layer components {
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-hairline bg-surface-1/80 px-3 py-1 text-[13px] font-medium text-ink-muted;
+    letter-spacing: 0.4px;
+  }
+
+  .btn {
+    @apply inline-flex h-10 items-center justify-center gap-2 rounded-md px-4 text-sm font-medium transition-colors duration-200;
+  }
+  .btn-primary {
+    @apply btn bg-primary text-white hover:bg-primary-hover active:bg-primary-focus;
+  }
+  .btn-secondary {
+    @apply btn border border-hairline bg-surface-1 text-ink hover:border-hairline-strong hover:bg-surface-2;
+  }
+
+  .panel {
+    @apply relative rounded-lg border border-hairline bg-surface-1;
+  }
+  /* Faint top-edge highlight on lifted panels */
+  .panel::before {
+    content: "";
+    @apply pointer-events-none absolute inset-x-0 top-0 h-px rounded-t-lg;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+  }
+
+  .input {
+    @apply h-11 w-full rounded-md border border-hairline bg-surface-1 px-3 text-base text-ink placeholder:text-ink-tertiary transition-colors;
+  }
+  .input:focus {
+    @apply border-hairline-strong outline-none;
+    box-shadow: 0 0 0 2px rgba(94, 105, 209, 0.5);
+  }
+
+  .display-xl {
+    @apply text-[44px] font-semibold leading-[1.05] tracking-[-1.6px] sm:text-[64px] sm:tracking-[-2.4px] lg:text-[80px] lg:tracking-display-xl;
+  }
+  .display-lg {
+    @apply text-[36px] font-semibold leading-[1.1] tracking-[-1.2px] md:text-[56px] md:tracking-display-lg;
+  }
+
+  .text-gradient {
+    background: linear-gradient(180deg, #f7f8f8 30%, rgba(247, 248, 248, 0.45));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .text-shimmer {
+    background: linear-gradient(110deg, #8a8f98 35%, #f7f8f8 50%, #8a8f98 65%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    @apply animate-shimmer;
+  }
+
+  .grid-bg {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  }
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, #000 40%, transparent);
+    mask-image: linear-gradient(to bottom, #000 40%, transparent);
+  }
+  .mask-radial {
+    -webkit-mask-image: radial-gradient(ellipse 60% 55% at 50% 40%, #000 30%, transparent 75%);
+    mask-image: radial-gradient(ellipse 60% 55% at 50% 40%, #000 30%, transparent 75%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
